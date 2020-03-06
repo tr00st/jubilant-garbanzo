@@ -12,7 +12,7 @@ function App() {
         </Toolbar>
     </AppBar>
     <div className="App">
-        <Typography>Hello, world!</Typography>
+        <Typography>Hello, world! Deployment test!</Typography>
     </div>
   </>;
 }
