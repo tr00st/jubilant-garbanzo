@@ -7,7 +7,9 @@ import { AppBar, Toolbar, Typography } from '@material-ui/core';
 function App() {
   return <>
     <AppBar>
-        <Typography variant="h6">Jubilant Garbanzo?</Typography>
+        <Toolbar>
+            <Typography variant="h6">Jubilant Garbanzo?</Typography>
+        </Toolbar>
     </AppBar>
     <div className="App">
         <Typography>Hello, world!</Typography>
