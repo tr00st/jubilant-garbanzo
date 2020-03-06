@@ -16,12 +16,17 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: |
-    yarn install --frozen-lockfile
-    yarn build
-  displayName: 'yarn install and build'
+- script: yarn install --frozen-lockfile
+  displayName: 'install'
+  
+- script: yarn test
+  displayName: 'test'
+
+- script: yarn build
+  displayName: 'build'
 
 - task: ArchiveFiles@2
+  displayName: 'archive'
   inputs:
     rootFolderOrFile: 'build/'
     includeRootFolder: false
@@ -30,6 +35,7 @@ steps:
     replaceExistingArchive: true
 
 - task: PublishPipelineArtifact@1
+  displayName: 'publish'
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     publishLocation: 'pipeline'
