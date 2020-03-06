@@ -19,7 +19,7 @@ steps:
 - script: yarn install --frozen-lockfile
   displayName: 'install'
   
-- script: yarn test
+- script: yarn test --ci --watchAll=false
   displayName: 'test'
 
 - script: yarn build
